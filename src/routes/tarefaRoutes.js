@@ -11,8 +11,8 @@ router.post('/', async (req, res) => {
 router.put('/:id', (req, res) => {
     res.send("editar tarefas");
 });
-router.delete('/:id', (req, res) => {
-    res.send("deletar tarefas");
+router.delete('/:id', async (req, res) => {
+    res.send(await executarSQL(`DELETE FROM tarefas WHERE tarefa_id = ${req.params.id};`));
 });
 
 module.exports = router;
