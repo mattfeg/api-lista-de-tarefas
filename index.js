@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 app.use('/tarefas', tarefaRoutes);
 
 app.all("*", (req, res) => {
-    res.status(404).send("Página não encontrada");
+    res.status(404).send("Rota não encontrada");
 });
 
 app.listen(port, () => {
