@@ -3,6 +3,7 @@ const router = express.Router();
 const { executarSQL } = require("../database/index");
 const { updateTarefa } = require("../controllers/tarefaController");
 
+
 router.get('/', async (req, res) => {
     res.send(await executarSQL("SELECT * FROM tarefas;"));
 });
